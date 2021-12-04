@@ -2,4 +2,4 @@
 Различные утилиты для билдерского сервера на PixLand
 
 ## Сборка
-`git clone https://github.com/PixLand/BuildServerCommands.git` -> `cd BuildServerCommands` -> `./gradlew build`
+`git clone https://github.com/PixLand/BuildServerUtils.git` -> `cd BuildServerUtils` -> `./gradlew build`
