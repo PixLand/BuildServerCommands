@@ -1,0 +1,8 @@
+bukkit {
+	name = 'BuildServerUtils'
+	main = 'com.magicsweet.pixland.buildserver.BuildServerUtils'
+	authors = [
+		'MagicSweet'
+	]
+	apiVersion = '1.17'
+}

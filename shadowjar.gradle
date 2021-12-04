@@ -1,0 +1,17 @@
+
+jar {
+	enabled = false
+	dependsOn << shadowJar
+}
+
+dependencies {
+	subprojects { pr ->
+		implementation pr
+	}
+}
+
+shadowJar {
+	dependencies {
+		include dependency('.*:.*:.*')
+	}
+}

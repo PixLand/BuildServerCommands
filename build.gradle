@@ -1,0 +1,83 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.5.0'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'maven-publish'
+}
+
+targetCompatibility = 16
+sourceCompatibility = 16
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+group 'com.magicsweet'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url 'https://repo.codemc.io/repository/nms/'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+    maven {
+        url 'https://msweet.xyz/ivy/maven3'
+    }
+    maven {
+        url 'https://repo.dmulloy2.net/repository/public/'
+    }
+    maven {
+        url 'https://papermc.io/repo/repository/maven-releases/'
+    }
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url 'https://repo.codemc.org/repository/maven-public/'
+    }
+    maven {
+        url 'https://nexus.velocitypowered.com/repository/maven-public/'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        url 'https://libraries.minecraft.net'
+    }
+    maven {
+        url 'https://raw.githubusercontent.com/JorelAli/CommandAPI/mvn-repo/'
+    }
+    maven {
+        url 'https://repository.apache.org/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    api 'com.magicsweet:MagicLib:1.2.0-rc2.5'
+    
+    compileOnly 'org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT'
+    
+    api 'dev.jorel.CommandAPI:commandapi-shade:6.1.0'
+    
+    compileOnly 'dev.jorel:commandapi-annotations:5.6'
+    annotationProcessor 'dev.jorel:commandapi-annotations:5.6'
+    
+    api 'de.tr7zw:item-nbt-api:2.8.0'
+    
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    
+}
+
+apply from: 'plugin.yml.gradle'
+apply from: './shadowjar.gradle'
